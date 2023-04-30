@@ -1,13 +1,13 @@
 const path = require("node:path")
 const express = require("express")
 const hbs = require("hbs")
-const forecast = require("../utils/forecast")
+const forecast = require("./src/utils/forecast")
 
 const app = express()
 
-const publicDir = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, "../templates/views")
-const partialsPath = path.join(__dirname, "../templates/partials")
+const publicDir = path.join(__dirname, '/public')
+const viewsPath = path.join(__dirname, "/templates/views")
+const partialsPath = path.join(__dirname, "/templates/partials")
 
 app.use(express.static(publicDir))
 
