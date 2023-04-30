@@ -9,7 +9,7 @@ forecastForm.addEventListener("submit", (event) => {
 
     let query = search.value;
 
-    fetch(`https://forecast-app-ymtp.onrender.comforecast?address=${query}`)
+    fetch(`https://forecast-app-ymtp.onrender.com/forecast?address=${query}`)
         .then((response) => {
             response.json().then((data) => {
                 if (data.error) {
