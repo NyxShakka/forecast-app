@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/favicon-32x32.png">
+    <title>{{title}}</title>
+</head>
+<body>
+<div class="main-content">
+    {{>header}}
+
+    <form action="">
+        <input type="text" placeholder="Write down a location!">
+        <button>Search</button>
+    </form>
+
+    {{#if error}}
+        <h2><i>{{error}}</i></h2>
+    {{else if data.error}}
+        <h2>Error: <i>{{data.error}}</i></h2>
+    {{else if data}}
+        <h2>{{data.body.location.name}}, {{data.body.location.country}}</h2>
+        <h1>{{data.body.current.temperature}}ºC <img src={{data.body.current.weather_icons}} alt="null"></h1>
+        Sensacion térmica de {{data.body.current.feelslike}}ºC, con {{data.body.current.precip}}% de probabilidad de
+        lluvia y
+        {{data.body.current.humidity}}% de humedad
+    {{/if}}
+
+</div>
+{{>footer}}
+
+<script src="/js/app.js"></script>
+</body>
+</html>
